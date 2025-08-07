@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products | Sharman Material Solutions</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <div class="container nav-container">
+      <img src="logo.png" alt="Sharman Material Solutions logo" class="logo" />
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="cta-header">
+        <a href="tel:0432360392" class="btn btn-call">Call 0432&nbsp;360&nbsp;392</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero small-hero">
+    <div class="container hero-content">
+      <h1>Our Products</h1>
+      <p>Premium materials for construction, landscaping and drainage projects.</p>
+    </div>
+  </section>
+
+  <!-- Drainage Material -->
+  <section id="drainage" class="product-detail">
+    <div class="container">
+      <h2>7mm Quarter Minus (Drainage Material)</h2>
+      <div class="product-detail-grid">
+        <img src="gravel.jpg" alt="Drainage Material" />
+        <div>
+          <p>
+            Specialized drainage material designed for agricultural drainage,
+            French drains and water management systems. Excellent filtration and
+            permeability properties to keep your projects running smoothly.
+          </p>
+          <p><strong>Sold per tonne. Minimum order: 4 tonnes.</strong></p>
+          <a href="tel:0432360392" class="btn btn-primary">Call Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aggregate -->
+  <section id="aggregate" class="product-detail" style="background-color:#F3F4F6;">
+    <div class="container">
+      <h2>20mm Aggregate</h2>
+      <div class="product-detail-grid">
+        <img src="aggregate.png" alt="20mm Aggregate" />
+        <div>
+          <p>
+            Standard 20mm aggregate ideal for concrete mixing, drainage
+            applications and decorative landscaping. Durable and versatile for
+            a range of construction projects.
+          </p>
+          <p><strong>Sold per tonne. Minimum order: 4 tonnes.</strong></p>
+          <a href="tel:0432360392" class="btn btn-primary">Call Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Soil -->
+  <section id="topsoil" class="product-detail">
+    <div class="container">
+      <h2>Premium Top Soil</h2>
+      <div class="product-detail-grid">
+        <img src="soil.png" alt="Premium Top Soil" />
+        <div>
+          <p>
+            High‑quality top soil perfect for gardens, lawns and landscaping
+            projects. Rich in nutrients to promote healthy plant growth and
+            improve soil structure.
+          </p>
+          <p><strong>Sold per cubic metre. Minimum order: 4 cubic metres.</strong></p>
+          <a href="tel:0432360392" class="btn btn-primary">Call Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scoria -->
+  <section id="scoria" class="product-detail" style="background-color:#F3F4F6;">
+    <div class="container">
+      <h2>Scoria</h2>
+      <div class="product-detail-grid">
+        <img src="scoria.png" alt="Scoria" />
+        <div>
+          <p>
+            Lightweight volcanic rock used for drainage, potting mixes and
+            decorative landscaping. Its porous structure allows for excellent
+            water flow and aeration.
+          </p>
+          <p><strong>Sold per cubic metre. Minimum order: 4 cubic metres.</strong></p>
+          <a href="tel:0432360392" class="btn btn-primary">Call Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Crushed Rock -->
+  <section id="crushedrock" class="product-detail">
+    <div class="container">
+      <h2>Crushed Rock</h2>
+      <div class="product-detail-grid">
+        <img src="gravel.jpg" alt="Crushed Rock" />
+        <div>
+          <p>
+            Durable crushed rock for driveways, paths and base layers. Provides
+            a stable foundation for construction and landscaping projects.
+          </p>
+          <p><strong>Sold per tonne. Minimum order: 4 tonnes.</strong></p>
+          <a href="tel:0432360392" class="btn btn-primary">Call Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-content">
+      <p>© 2025 Sharman Material Solutions. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://wa.me/61432360392" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp button -->
+  <a href="https://wa.me/61432360392" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    // Fade in product sections on scroll
+    document.addEventListener('DOMContentLoaded', function () {
+      const elements = document.querySelectorAll('.product-detail-grid');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.parentElement.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+      elements.forEach((el) => observer.observe(el));
+    });
+  </script>
+</body>
+</html>

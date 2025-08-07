@@ -1,0 +1,452 @@
+/*
+  Global styles for the redesigned Sharman Material Solutions website.
+  The colour scheme is inspired by the original site, using deep greens and warm yellows.
+  Responsive layouts are achieved with flexbox and media queries. Scroll‑triggered
+  animations are defined for feature cards and product cards to gently fade
+  elements into view as the user scrolls.
+*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  background-color: #175B3E;
+  color: #ffffff;
+  padding: 20px 0;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 50px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+nav a:hover {
+  opacity: 0.8;
+}
+
+.cta-header .btn {
+  background-color: #FBBF24;
+  color: #175B3E;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #FBBF24;
+  color: #175B3E;
+}
+
+.btn-primary:hover {
+  background-color: #E0A613;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid #FBBF24;
+  color: #FBBF24;
+}
+
+.btn-secondary:hover {
+  background-color: #FBBF24;
+  color: #175B3E;
+}
+
+.btn-call {
+  background-color: #FBBF24;
+  color: #175B3E;
+}
+
+.small {
+  font-size: 14px;
+  padding: 8px 20px;
+}
+
+/* Hero section */
+.hero {
+  background: linear-gradient(to bottom right, #175B3E, #0D3A26);
+  color: #ffffff;
+  padding: 100px 0 120px;
+  text-align: center;
+}
+
+.hero.small-hero {
+  padding: 60px 0;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.hero h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+.hero-buttons .btn {
+  margin: 0 10px;
+}
+
+/* Feature section */
+.features {
+  padding: 80px 0;
+  background-color: #F3F4F6;
+  color: #175B3E;
+  text-align: center;
+}
+
+.features h2 {
+  margin-bottom: 40px;
+  font-size: 32px;
+}
+
+.feature-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+.feature-item {
+  flex: 1 1 250px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.feature-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.feature-item i {
+  font-size: 32px;
+  color: #FBBF24;
+  margin-bottom: 10px;
+}
+
+.feature-item h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.feature-item p {
+  font-size: 14px;
+}
+
+/* Products preview */
+.products-preview {
+  padding: 80px 0;
+}
+
+.products-preview h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #175B3E;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.product-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  flex: 1 1 300px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.product-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  font-size: 22px;
+  margin: 20px;
+  color: #175B3E;
+}
+
+.product-card p {
+  font-size: 14px;
+  margin: 0 20px 20px 20px;
+  color: #555555;
+}
+
+.product-card .btn {
+  margin: 0 20px 20px 20px;
+}
+
+/* Call‑to‑action section */
+.cta {
+  background-color: #175B3E;
+  color: #ffffff;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.cta p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+  background-color: #0D3A26;
+  color: #ffffff;
+  padding: 20px 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-content p {
+  margin: 0;
+}
+
+.social-links a {
+  color: #FBBF24;
+  font-size: 24px;
+  margin-left: 20px;
+}
+
+/* Floating WhatsApp button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366; /* WhatsApp green */
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.05);
+}
+
+/* Product details page */
+.product-detail {
+  padding: 80px 0;
+}
+
+.product-detail h2 {
+  color: #175B3E;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.product-detail-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.product-detail-grid img {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.product-detail-grid .btn {
+  margin-top: 20px;
+}
+
+/* About page */
+.about-section {
+  padding: 80px 0;
+}
+
+.about-section h2 {
+  color: #175B3E;
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about-section p {
+  max-width: 800px;
+  margin: 0 auto 20px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333333;
+}
+
+/* Contact page */
+.contact-section {
+  padding: 80px 0;
+}
+
+.contact-section h2 {
+  color: #175B3E;
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.contact-details {
+  flex: 1 1 300px;
+}
+
+.contact-details p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.contact-form {
+  flex: 1 1 300px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  height: 120px;
+}
+
+.contact-form button {
+  align-self: flex-start;
+}
+
+.map-container {
+  margin-top: 40px;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  border-radius: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .product-detail-grid,
+  .feature-grid,
+  .product-grid,
+  .contact-grid {
+    flex-direction: column;
+  }
+  .hero h1 {
+    font-size: 36px;
+  }
+  .hero h2 {
+    font-size: 24px;
+  }
+}

@@ -3,495 +3,146 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sharman Material Solutions | Premium Building Materials</title>
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      /* Colour palette based on the existing brand */
-      --primary-color: #1e5631;        /* dark green */
-      --secondary-color: #f5a623;      /* warm yellow */
-      --light-bg: #f8f9f5;            /* very light background for sections */
-      --dark-text: #222;              /* primary text colour */
-      --muted-text: #5b5b5b;          /* secondary text colour */
-      --border-radius: 0.5rem;
-    }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      color: var(--dark-text);
-      background-color: #fff;
-      scroll-behavior: smooth;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    /* Container to constrain content */
-    .container {
-      width: min(90%, 1200px);
-      margin: 0 auto;
-    }
-    /* Header */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      background-color: rgba(255, 255, 255, 0.95);
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    }
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.5rem 0;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .logo img {
-      width: 48px;
-      height: 48px;
-    }
-    nav {
-      display: flex;
-      gap: 1.5rem;
-    }
-    nav a {
-      font-weight: 500;
-      color: var(--dark-text);
-      transition: color 0.2s ease;
-    }
-    nav a:hover {
-      color: var(--primary-color);
-    }
-    .call-btn {
-      background-color: var(--secondary-color);
-      color: #fff;
-      padding: 0.6rem 1rem;
-      border-radius: var(--border-radius);
-      font-weight: 600;
-      transition: background-color 0.2s ease;
-      white-space: nowrap;
-    }
-    .call-btn:hover {
-      background-color: #d7901d;
-    }
-    /* Hero section */
-    .hero {
-      position: relative;
-      padding-top: 6rem;
-      /* account for fixed header */
-      min-height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      overflow: hidden;
-      color: #fff;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(170deg, var(--primary-color) 0%, #163d24 100%);
-      z-index: -2;
-    }
-    .hero img.hero-bg {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.3;
-      z-index: -1;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-    }
-    .hero h1 span {
-      color: var(--secondary-color);
-    }
-    .hero p {
-      max-width: 600px;
-      margin: 0 auto 2rem;
-      font-size: 1.1rem;
-      color: #e4e4e4;
-    }
-    .button-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-    }
-    .button {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      border-radius: var(--border-radius);
-      font-weight: 600;
-      transition: background-color 0.2s ease, color 0.2s ease;
-    }
-    .button.primary {
-      background-color: var(--secondary-color);
-      color: #fff;
-    }
-    .button.primary:hover {
-      background-color: #d7901d;
-    }
-    .button.secondary {
-      background-color: transparent;
-      border: 2px solid var(--secondary-color);
-      color: var(--secondary-color);
-    }
-    .button.secondary:hover {
-      background-color: var(--secondary-color);
-      color: #fff;
-    }
-    /* Section titles */
-    section {
-      padding: 4rem 0;
-    }
-    section h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
-      color: var(--primary-color);
-    }
-    section p.section-intro {
-      max-width: 700px;
-      margin: 0 auto 2.5rem;
-      text-align: center;
-      color: var(--muted-text);
-    }
-    /* Features */
-    .features {
-      background-color: var(--light-bg);
-    }
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-    }
-    .feature {
-      background-color: #fff;
-      border-radius: var(--border-radius);
-      padding: 1.5rem;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-      transition: transform 0.2s ease;
-    }
-    .feature:hover {
-      transform: translateY(-5px);
-    }
-    .feature-icon {
-      width: 48px;
-      height: 48px;
-      margin: 0 auto 1rem;
-      fill: var(--secondary-color);
-    }
-    .feature h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-      color: var(--primary-color);
-    }
-    .feature p {
-      font-size: 0.95rem;
-      color: var(--muted-text);
-    }
-    /* Products */
-    .products .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-    }
-    .product-card {
-      background-color: #fff;
-      border-radius: var(--border-radius);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.2s ease;
-    }
-    .product-card:hover {
-      transform: translateY(-5px);
-    }
-    .product-card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-      color: var(--primary-color);
-    }
-    .product-card p {
-      flex-grow: 1;
-      font-size: 0.95rem;
-      color: var(--muted-text);
-      margin-bottom: 1rem;
-    }
-    .product-card .button.small {
-      align-self: flex-start;
-      padding: 0.5rem 1rem;
-      font-size: 0.9rem;
-    }
-    /* Service area */
-    .service-area {
-      background-color: var(--light-bg);
-      text-align: center;
-    }
-    .service-area h3 {
-      font-size: 1.5rem;
-      color: var(--primary-color);
-      margin-bottom: 0.5rem;
-    }
-    .service-area p {
-      max-width: 700px;
-      margin: 0 auto 1.5rem;
-      color: var(--muted-text);
-    }
-    .service-area .button {
-      padding: 0.6rem 1.2rem;
-      font-size: 0.95rem;
-    }
-    /* Contact / call to action section */
-    .cta-section {
-      text-align: center;
-      background-color: #fff;
-      border-radius: var(--border-radius);
-      padding: 2rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    .cta-section h3 {
-      font-size: 1.6rem;
-      color: var(--primary-color);
-      margin-bottom: 0.5rem;
-    }
-    .cta-section p {
-      color: var(--muted-text);
-      margin-bottom: 1.5rem;
-    }
-    .cta-section .phone-number {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--secondary-color);
-      margin-bottom: 1rem;
-    }
-    /* Footer */
-    footer {
-      background-color: var(--primary-color);
-      color: #fff;
-      padding: 2rem 0;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-    }
-    .footer-section h4 {
-      font-size: 1.2rem;
-      margin-bottom: 0.8rem;
-    }
-    .footer-section ul {
-      list-style: none;
-    }
-    .footer-section ul li {
-      margin-bottom: 0.5rem;
-    }
-    .footer-section ul li a {
-      color: #e9e9e9;
-      transition: color 0.2s ease;
-    }
-    .footer-section ul li a:hover {
-      color: var(--secondary-color);
-    }
-    .footer-bottom {
-      text-align: center;
-      margin-top: 1.5rem;
-      font-size: 0.85rem;
-      color: #c2d4c7;
-    }
-    /* Responsive tweaks */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-      nav {
-        display: none;
-      }
-      /* simple mobile nav could be added later */
-    }
-  </style>
+  <title>Sharman Material Solutions | Building Materials Melbourne</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
   <header>
-    <div class="container header-inner">
-      <div class="logo">
-        <img src="logo.png" alt="Sharman Material Solutions logo" />
-      </div>
+    <div class="container nav-container">
+      <img src="logo.png" alt="Sharman Material Solutions logo" class="logo" />
       <nav>
-        <a href="#home">Home</a>
-        <a href="#products">Products</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </nav>
-      <a href="tel:0432360392" class="call-btn">Call 0432 360 392</a>
+      <div class="cta-header">
+        <a href="tel:0432360392" class="btn btn-call">Call 0432&nbsp;360&nbsp;392</a>
+      </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <img src="hero.png" alt="Abstract construction illustration" class="hero-bg" />
-    <div class="container">
-      <h1>Premium Building Materials<br><span>Fast Delivery Across Melbourne</span></h1>
-      <p>Local supplier. Same‑day or next‑day delivery on crushed rock, top soil, aggregate, scoria &amp; drainage.</p>
-      <div class="button-group">
-        <a href="tel:0432360392" class="button primary">Call Now</a>
-        <a href="#products" class="button secondary">View Products</a>
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Premium Building Materials</h1>
+      <h2>Fast Delivery Across Melbourne</h2>
+      <p>
+        Local supplier. Same‑day or next‑day delivery on crushed rock, top soil,
+        aggregate, scoria &amp; drainage materials.
+      </p>
+      <div class="hero-buttons">
+        <a href="tel:0432360392" class="btn btn-primary">Call Now</a>
+        <a href="products.html" class="btn btn-secondary">View Products</a>
       </div>
     </div>
   </section>
 
-  <!-- Features Section -->
   <section class="features">
-    <h2>Why Choose Us</h2>
-    <p class="section-intro">We’re a Melbourne‑based supplier with a commitment to quality, reliability and value. Here’s what sets us apart.</p>
-    <div class="container features-grid">
-      <div class="feature">
-        <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M323.4 85.2l-96.8 78.4c-16.1 13-19.2 36.4-7 53.1c12.9 17.8 38 21.3 55.3 7.8l99.3-77.2c7-5.4 17-4.2 22.5 2.8s4.2 17-2.8 22.5l-20.9 16.2L512 316.8 512 128l-.7 0-3.9-2.5L434.8 79c-15.3-9.8-33.2-15-51.4-15c-21.8 0-43 7.5-60 21.2zm22.8 124.4l-51.7 40.2C263 274.4 217.3 268 193.7 235.6c-22.2-30.5-16.6-73.1 12.7-96.8l83.2-67.3c-11.6-4.9-24.1-7.4-36.8-7.4C234 64 215.7 69.6 200 80l-72 48 0 224 28.2 0 91.4 83.4c19.6 17.9 49.9 16.5 67.8-3.1c5.5-6.1 9.2-13.2 11.1-20.6l17 15.6c19.5 17.9 49.9 16.6 67.8-2.9c4.5-4.9 7.8-10.6 9.9-16.5c19.4 13 45.8 10.3 62.1-7.5c17.9-19.5 16.6-49.9-2.9-67.8l-134.2-123zM16 128c-8.8 0-16 7.2-16 16L0 352c0 17.7 14.3 32 32 32l32 0c17.7 0 32-14.3 32-32l0-224-80 0zM48 320a16 16 0 1 1 0 32 16 16 0 1 1 0-32zM544 128l0 224c0 17.7 14.3 32 32 32l32 0c17.7 0 32-14.3 32-32l0-208c0-8.8-7.2-16-16-16l-80 0zm32 208a16 16 0 1 1 32 0 16 16 0 1 1 -32 0z"/></svg>
-        <h3>Local &amp; Reliable</h3>
-        <p>Melbourne‑based supplier with deep local knowledge and reliable service.</p>
-      </div>
-      <div class="feature">
-        <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M112 0C85.5 0 64 21.5 64 48l0 48L16 96c-8.8 0-16 7.2-16 16s7.2 16 16 16l48 0 208 0c8.8 0 16 7.2 16 16s-7.2 16-16 16L64 160l-16 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l16 0 176 0c8.8 0 16 7.2 16 16s-7.2 16-16 16L64 224l-48 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l48 0 144 0c8.8 0 16 7.2 16 16s-7.2 16-16 16L64 288l0 128c0 53 43 96 96 96s96-43 96-96l128 0c0 53 43 96 96 96s96-43 96-96l32 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l0-64 0-32 0-18.7c0-17-6.7-33.3-18.7-45.3L512 114.7c-12-12-28.3-18.7-45.3-18.7L416 96l0-48c0-26.5-21.5-48-48-48L112 0zM544 237.3l0 18.7-128 0 0-96 50.7 0L544 237.3zM160 368a48 48 0 1 1 0 96 48 48 0 1 1 0-96zm272 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0z"/></svg>
-        <h3>Fast Delivery</h3>
-        <p>Same‑day or next‑day delivery options to keep your project moving forward.</p>
-      </div>
-      <div class="feature">
-        <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M116.7 33.8c4.5-6.1 11.7-9.8 19.3-9.8l240 0c7.6 0 14.8 3.6 19.3 9.8l112 152c6.8 9.2 6.1 21.9-1.5 30.4l-232 256c-4.5 5-11 7.9-17.8 7.9s-13.2-2.9-17.8-7.9l-232-256c-7.7-8.5-8.3-21.2-1.5-30.4l112-152zm38.5 39.8c-3.3 2.5-4.2 7-2.1 10.5l57.4 95.6L63.3 192c-4.1 .3-7.3 3.8-7.3 8s3.2 7.6 7.3 8l192 16c.4 0 .9 0 1.3 0l192-16c4.1-.3 7.3-3.8 7.3-8s-3.2-7.6-7.3-8L301.5 179.8l57.4-95.6c2.1-3.5 1.2-8.1-2.1-10.5s-7.9-2-10.7 1L256 172.2 165.9 74.6c-2.8-3-7.4-3.4-10.7-1z"/></svg>
-        <h3>Quality Materials</h3>
-        <p>Premium building materials that meet industry standards.</p>
-      </div>
-      <div class="feature">
-        <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M345 39.1L472.8 168.4c52.4 53 52.4 138.2 0 191.2L360.8 472.9c-9.3 9.4-24.5 9.5-33.9 .2s-9.5-24.5-.2-33.9L438.6 325.9c33.9-34.3 33.9-89.4 0-123.7L310.9 72.9c-9.3-9.4-9.2-24.6 .2-33.9s24.6-9.2 33.9 .2zM0 229.5L0 80C0 53.5 21.5 32 48 32l149.5 0c17 0 33.3 6.7 45.3 18.7l168 168c25 25 25 65.5 0 90.5L277.3 442.7c-25 25-65.5 25-90.5 0l-168-168C6.7 262.7 0 246.5 0 229.5zM144 144a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></svg>
-        <h3>Competitive Pricing</h3>
-        <p>Fair pricing with transparent quotes and no hidden fees.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Products Section -->
-  <section id="products" class="products">
-    <h2>Our Products</h2>
-    <p class="section-intro">Quality building materials for every construction and landscaping need.</p>
-    <div class="container product-grid">
-      <div class="product-card">
-        <h3>Crushed Rock</h3>
-        <p>High‑quality crushed rock for road base, driveways and construction.</p>
-        <a href="tel:0432360392" class="button primary small">Call</a>
-      </div>
-      <div class="product-card">
-        <h3>Top Soil</h3>
-        <p>Premium top soil enriched with organic matter for gardens and landscaping.</p>
-        <a href="tel:0432360392" class="button primary small">Call</a>
-      </div>
-      <div class="product-card">
-        <h3>Tuscan Toppings</h3>
-        <p>Premium Tuscan toppings for decorative landscaping and ground cover.</p>
-        <a href="tel:0432360392" class="button primary small">Call</a>
-      </div>
-      <div class="product-card">
-        <h3>Aggregate</h3>
-        <p>Various aggregate sizes for concrete, drainage and construction projects.</p>
-        <a href="tel:0432360392" class="button primary small">Call</a>
-      </div>
-      <div class="product-card">
-        <h3>Scoria</h3>
-        <p>Natural red scoria for drainage and decorative landscaping.</p>
-        <a href="tel:0432360392" class="button primary small">Call</a>
-      </div>
-      <div class="product-card">
-        <h3>Drainage</h3>
-        <p>Specialised drainage materials for effective water management.</p>
-        <a href="tel:0432360392" class="button primary small">Call</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Service Area Section -->
-  <section id="about" class="service-area">
     <div class="container">
-      <h3>Service Area</h3>
-      <p>Servicing Melbourne suburbs — check your postcode for delivery availability.</p>
-      <a href="tel:0432360392" class="button primary">Check Your Postcode</a>
+      <h2>Why Choose Us</h2>
+      <div class="feature-grid">
+        <div class="feature-item">
+          <i class="fas fa-truck-moving"></i>
+          <h3>Fast Delivery</h3>
+          <p>Same‑day or next‑day delivery available across Melbourne suburbs.</p>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-check-circle"></i>
+          <h3>Quality Assured</h3>
+          <p>Premium materials that meet industry standards for construction and landscaping.</p>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-box-open"></i>
+          <h3>Reliable Supply</h3>
+          <p>Consistent availability and scheduling with a minimum order of 4 tonnes or 4 cubic metres.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Call to Action / Contact Section -->
-  <section id="contact">
-    <div class="cta-section">
-      <h3>Ready to Get Started?</h3>
-      <p>Our friendly team is standing by to help with your project. Call now for competitive pricing and same‑day delivery options.</p>
-      <div class="phone-number">0432&nbsp;360&nbsp;392</div>
-      <a href="tel:0432360392" class="button primary">Call Now for Quote</a>
-      <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--muted-text);">Business Hours: Monday–Saturday: 05:00–18:00 · Sunday: Closed</p>
+  <section class="products-preview">
+    <div class="container">
+      <h2>Our Products</h2>
+      <div class="product-grid">
+        <!-- Drainage Material preview -->
+        <div class="product-card">
+          <img src="gravel.jpg" alt="Drainage Material" />
+          <h3>Drainage Material</h3>
+          <p>
+            Specialized material designed for agricultural drainage, French drains
+            and water management systems.
+          </p>
+          <a href="products.html#drainage" class="btn btn-secondary small">View Details</a>
+        </div>
+        <!-- Aggregate preview -->
+        <div class="product-card">
+          <img src="aggregate.png" alt="Aggregate" />
+          <h3>Aggregate</h3>
+          <p>
+            Standard aggregate ideal for concrete mixing, drainage applications
+            and decorative landscaping.
+          </p>
+          <a href="products.html#aggregate" class="btn btn-secondary small">View Details</a>
+        </div>
+        <!-- Top Soil preview -->
+        <div class="product-card">
+          <img src="soil.png" alt="Top Soil" />
+          <h3>Top Soil</h3>
+          <p>High‑quality top soil perfect for gardens and landscaping projects.</p>
+          <a href="products.html#topsoil" class="btn btn-secondary small">View Details</a>
+        </div>
+      </div>
+      <div class="center" style="text-align:center; margin-top:30px;">
+        <a href="products.html" class="btn btn-primary">See all products</a>
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <section class="cta">
+    <div class="container cta-content">
+      <h2>Need Bulk Materials Delivered?</h2>
+      <p>
+        Contact us today for pricing, availability and delivery scheduling to your
+        Melbourne location.
+      </p>
+      <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+    </div>
+  </section>
+
   <footer>
-    <div class="container footer-grid">
-      <div class="footer-section">
-        <h4>Sharman Material Solutions</h4>
-        <p>Premium building materials delivered fast throughout Melbourne suburbs. Local supplier with same‑day and next‑day delivery options.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #c2d4c7;">ABN: 27666258199</p>
+    <div class="container footer-content">
+      <p>© 2025 Sharman Material Solutions. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://wa.me/61432360392" target="_blank" class="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
       </div>
-      <div class="footer-section">
-        <h4>Contact Us</h4>
-        <ul>
-          <li>Phone: <a href="tel:0432360392">0432 360 392</a></li>
-          <li>Email: <a href="mailto:sharmanmaterials@gmail.com">sharmanmaterials@gmail.com</a></li>
-          <li>Location: Melbourne, Victoria, Australia</li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Hours</h4>
-        <ul>
-          <li>Mon–Sat: 05:00–18:00</li>
-          <li>Sun: Closed</li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#products">Products</a></li>
-          <li><a href="#about">Service Area</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      © 2025 Sharman Material Solutions. All rights reserved.
     </div>
   </footer>
+
+  <!-- Floating WhatsApp button -->
+  <a href="https://wa.me/61432360392" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    // Intersection Observer for animations
+    document.addEventListener('DOMContentLoaded', function () {
+      const elements = document.querySelectorAll('.feature-item, .product-card, .cta-content');
+      const options = { threshold: 0.1 };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, options);
+      elements.forEach((el) => observer.observe(el));
+    });
+  </script>
 </body>
 </html>
